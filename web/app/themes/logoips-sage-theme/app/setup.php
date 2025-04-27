@@ -153,3 +153,18 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+// registration of blocks
+add_action('acf/init', function () {
+    register_block_type(get_theme_file_path('resources/views/blocks/hero'));
+});
+
+// adding bootstrap css to Gutenberg-editor
+add_action('enqueue_block_editor_assets', function () {
+    wp_enqueue_style(
+        'bootstrap-editor',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
+        [],
+        '5.3.2'
+    );
+});
