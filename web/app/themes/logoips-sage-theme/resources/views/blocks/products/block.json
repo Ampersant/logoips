@@ -1,0 +1,16 @@
+{
+    "name": "acf/products",
+    "title": "Products",
+    "description": "A Products section",
+    "style": [ "file:./products.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["products", "cards"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "products.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

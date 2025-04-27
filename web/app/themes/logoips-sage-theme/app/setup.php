@@ -157,6 +157,7 @@ add_action('widgets_init', function () {
 // registration of blocks
 add_action('acf/init', function () {
     register_block_type(get_theme_file_path('resources/views/blocks/hero'));
+    register_block_type(get_theme_file_path('resources/views/blocks/products'));
 });
 
 // adding bootstrap css to Gutenberg-editor
