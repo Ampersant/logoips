@@ -37,7 +37,4 @@
   @php(do_action('get_footer'))
   @php(wp_footer())
 </body>
-<!-- Bootstrap 5 JS Bundle via jsDelivr CDN -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ENjdO4Dr2bkBIFxQpeoCgU3wA5KVpt4Q2YkD/k5o59b4zuwWv+uFFDN0SyP4e4xP" crossorigin="anonymous"></script>
 </html>

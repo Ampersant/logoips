@@ -158,6 +158,51 @@ add_action('widgets_init', function () {
 add_action('acf/init', function () {
     register_block_type(get_theme_file_path('resources/views/blocks/hero'));
     register_block_type(get_theme_file_path('resources/views/blocks/products'));
+    // register_block_type(get_theme_file_path('resources/views/blocks/blog'));
+
+    // ==== registring Blog Block with Scripts ====
+    wp_register_script(
+        'jquery-cdn',
+        'https://code.jquery.com/jquery-3.7.1.min.js',
+        [],            
+        '3.7.1',
+        true          
+    );
+    wp_register_script(
+        'swiper-cdn',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        ['jquery-cdn'], 
+        '11.0.0',
+        true
+    );
+
+    $block_dir = 'resources/views/blocks/blog';
+    wp_register_script(
+        'block-blog-script',
+        get_theme_file_uri("$block_dir/blog.js"),
+        ['swiper-cdn'], // сперва Swiper (а он сам подтянет jQuery)
+        filemtime(get_theme_file_path("$block_dir/blog.js")),
+        true
+    );
+    wp_register_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        [],
+        '11.0.0'
+    );
+    wp_register_style(
+        'block-blog-style',
+        get_theme_file_uri('resources/views/blocks/blog/blog.css'),
+        [],
+        filemtime(get_theme_file_path('resources/views/blocks/blog/blog.css'))
+    );
+    register_block_type(
+        get_theme_file_path("$block_dir/block.json"),
+        [
+            'script' => 'block-blog-script',
+            'style'  =>  ['swiper-css', 'block-blog-style'],
+        ]
+    );
 });
 
 // adding bootstrap css to Gutenberg-editor
