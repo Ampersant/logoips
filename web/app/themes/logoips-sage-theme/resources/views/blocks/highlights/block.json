@@ -1,0 +1,16 @@
+{
+    "name": "acf/highlights",
+    "title": "Highlights",
+    "description": "A Highlights block.",
+    "style": [ "file:./Highlights.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["highlights"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "highlights.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
