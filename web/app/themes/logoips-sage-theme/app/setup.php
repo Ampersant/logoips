@@ -158,6 +158,7 @@ add_action('widgets_init', function () {
 add_action('acf/init', function () {
     register_block_type(get_theme_file_path('resources/views/blocks/hero'));
     register_block_type(get_theme_file_path('resources/views/blocks/products'));
+    register_block_type(get_theme_file_path('resources/views/blocks/promo'));
     // register_block_type(get_theme_file_path('resources/views/blocks/blog'));
 
     // ==== registring Blog Block with Scripts ====
@@ -180,7 +181,7 @@ add_action('acf/init', function () {
     wp_register_script(
         'block-blog-script',
         get_theme_file_uri("$block_dir/blog.js"),
-        ['swiper-cdn'], // сперва Swiper (а он сам подтянет jQuery)
+        ['swiper-cdn'],
         filemtime(get_theme_file_path("$block_dir/blog.js")),
         true
     );
@@ -199,7 +200,7 @@ add_action('acf/init', function () {
     register_block_type(
         get_theme_file_path("$block_dir/block.json"),
         [
-            'script' => 'block-blog-script',
+            'viewScript' => 'block-blog-script',
             'style'  =>  ['swiper-css', 'block-blog-style'],
         ]
     );
@@ -213,4 +214,5 @@ add_action('enqueue_block_editor_assets', function () {
         [],
         '5.3.2'
     );
+
 });

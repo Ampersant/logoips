@@ -1,0 +1,16 @@
+{
+    "name": "acf/promo",
+    "title": "Promo",
+    "description": "A Promo block.",
+    "style": [ "file:./promo.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["promo", "thumbnail"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "promo.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
