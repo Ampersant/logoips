@@ -1,0 +1,16 @@
+{
+    "name": "acf/footer",
+    "title": "Footer",
+    "description": "A Footer block.",
+    "style": [ "file:./footer.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["footer"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "footer.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
