@@ -161,6 +161,7 @@ add_action('acf/init', function () {
     register_block_type(get_theme_file_path('resources/views/blocks/promo'));
     register_block_type(get_theme_file_path('resources/views/blocks/highlights'));
     register_block_type(get_theme_file_path('resources/views/blocks/footer'));
+    register_block_type(get_theme_file_path('resources/views/blocks/scroll-back'));
     // register_block_type(get_theme_file_path('resources/views/blocks/blog'));
 
     // ==== registring Blog Block with Scripts ====

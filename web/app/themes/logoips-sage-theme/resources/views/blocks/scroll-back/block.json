@@ -1,0 +1,17 @@
+{
+    "name": "acf/scroll-back",
+    "title": "Scroll Back",
+    "description": "Scroll back button",
+    "style": [ "file:./scroll-back.css" ],
+    "editorStyle": [ "file:./scroll-back.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["scroll back"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "scroll-back.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
