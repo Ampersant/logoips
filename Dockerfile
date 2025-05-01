@@ -5,6 +5,11 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --optimize-autoloader
 COPY . .
 
+
+WORKDIR /app/web/app/themes/logoips-sage-theme
+RUN composer install --no-dev --prefer-dist --optimize-autoloader
+
+WORKDIR /app
 # 2) Node 18 + npm/Vite (Sage theme)
 FROM node:18 AS node-builder
 WORKDIR /theme
@@ -28,7 +33,9 @@ COPY --from=php-builder /app /var/www/html
 COPY --from=node-builder /theme/public/build \
      /var/www/html/web/app/themes/logoips-sage-theme/public/build
 
-RUN chown -R www-data:www-data \
+RUN mkdir -p /var/www/html/web/app/cache \
+     /var/www/html/web/app/uploads \
+     && chown -R www-data:www-data \
      /var/www/html/web/app/cache \
      /var/www/html/web/app/uploads \
      && chmod -R 775 \
