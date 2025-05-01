@@ -5,7 +5,6 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --optimize-autoloader
 COPY . .
 
-
 WORKDIR /app/web/app/themes/logoips-sage-theme
 RUN composer install --no-dev --prefer-dist --optimize-autoloader
 
@@ -22,14 +21,14 @@ RUN apk update \
      && apk add --no-cache nginx \
      && docker-php-ext-install pdo_mysql
 
-# Копируем Nginx-конфиги
+# Copying Nginx-configs
 COPY docker/nginx/nginx.conf   /etc/nginx/nginx.conf
 COPY docker/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
-# Копируем PHP-часть (Bedrock + WP-core + тему/плагины)
+# Copying PHP-part (Bedrock + WP-core + theme/plugins)
 COPY --from=php-builder /app /var/www/html
 
-# Копируем скомпилированные ассеты темы
+# Copying assets of theme
 COPY --from=node-builder /theme/public/build \
      /var/www/html/web/app/themes/logoips-sage-theme/public/build
 
@@ -41,7 +40,7 @@ RUN mkdir -p /var/www/html/web/app/cache \
      && chmod -R 775 \
      /var/www/html/web/app/cache \
      /var/www/html/web/app/uploads
-# Логи в stdout/stderr
+# Logs in stdout/stderr
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
      && ln -sf /dev/stderr /var/log/nginx/error.log
 
