@@ -1,61 +1,89 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
+**Logoips - test task from [Nova Gmbh](https://www.nova-web.de/)**
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/bedrock">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/bedrock?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
+WP Bedrock + Sage Theme with Swiper
 
-  <a href="https://packagist.org/packages/roots/wordpress">
-    <img alt="roots/wordpress Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/wordpress?label=roots%2Fwordpress%20downloads&logo=roots&logoColor=white&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
-
-  <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/bedrock/master/composer.json&label=wordpress&logo=roots&logoColor=white&query=$.require[%22roots/wordpress%22]&colorB=2b3072&colorA=525ddc&style=flat-square">
-
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/bedrock/ci.yml?branch=master&logo=github&label=CI&style=flat-square">
-  </a>
-
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
-  </a>
-</p>
-
-<p align="center">WordPress boilerplate with Composer, easier configuration, and an improved folder structure</p>
-
-<p align="center">
-  <a href="https://roots.io/bedrock/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/bedrock/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
-
-## Sponsors
-
-Bedrock is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, please consider [sponsoring Roots](https://github.com/sponsors/roots).
-
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a>
-</div>
+---
 
 ## Overview
 
-Bedrock is a WordPress boilerplate for developers that want to manage their projects with Git and Composer. Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology, including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+This project combines [Bedrock](https://roots.io/bedrock/) and [Sage](https://roots.io/sage/) to create a modern, organized WordPress setup featuring a custom navigation inspired by [bedimcode/responsive-navigation-bar](https://github.com/bedimcode/responsive-navigation-bar). It integrates the [Swiper](https://swiperjs.com/) library for touch-enabled slides.
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
+## Features
+
+* **Bedrock** directory structure and environment management
+* **Sage** theme development toolkit (Blade templating, asset build pipeline)
+* **Responsive navigation** based on bedimcode’s design
+* **Swiper** integration for and sliders
+* Dockerized development environment with MySQL, PHP-FPM, and Nginx
+
+## Prerequisites
+
+* Docker & Docker Compose installed (version >= 20.10)
+* A MySQL dump file placed in `docker/mysql-init/name_of_db.sql`
+* A valid `.env` file in the project root
+
+**can be provided on request**
 
 ## Getting Started
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+1. **Clone the repository**
 
-## Stay Connected
+   ```bash
+   git clone https://github.com/Ampersant/logoips.git
+   cd logoips
+   ```
 
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+2. **Prepare environment files**
+
+   * Place dump of MySQL in next folder:
+
+     ```
+     docker/mysql-init/
+     ```
+   * Insert a `.env` file in the project root.
+
+3. **Start Docker containers**
+
+   ```bash
+   docker-compose up --build
+   ```
+
+After 
+```
+db-1   | 2025-05-01T22:36:36.404201Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.42'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+```
+You ready to go!
+
+❗❗❗ *To avoid issues please wait a few extra minutes, till the DB is fully set up* 
+
+5. **Access the site**
+
+   * Frontend: [http://localhost:8080](http://localhost:8080)
+   * Admin: [http://localhost:8080/wp/wp-admin](http://localhost:8080/wp/wp-admin) - credentials on request
+   * Database: host `db`, user and password as configured in `.env`
+
+
+
+### Custom Navigation
+
+The navigation walker extends WordPress’s `Walker_Nav_Menu` to output a custom dropdown. Inspired by [bedimcode/responsive-navigation-bar](https://github.com/bedimcode/responsive-navigation-bar).
+
+## Docker Configuration
+
+* **Services**:
+
+  * `app`: PHP-FPM container running Bedrock/Sage
+  * `web`: Nginx reverse proxy
+  * `db`: MySQL with initialization
+
+* **Volumes**:
+
+  * `./docker/mysql-init/:/docker-entrypoint-initdb.d`
+  * `./web:/var/www/html`
+
+* **Ports**:
+
+  * `8080:80` for HTTP
+
+
+*Thank you for attention!*
