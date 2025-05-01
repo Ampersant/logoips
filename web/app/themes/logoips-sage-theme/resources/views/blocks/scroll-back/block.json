@@ -10,8 +10,5 @@
     "acf": {
         "mode": "preview",
         "renderTemplate": "scroll-back.php"
-    },
-    "supports": {
-        "anchor": true
     }
 }

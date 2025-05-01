@@ -19,10 +19,10 @@
     <div class="nav-menu" id="nav-menu">
       {!! wp_nav_menu([
     'theme_location' => 'primary_navigation',
-    'menu_class' => 'nav__list',
-    'container' => false,
-    'walker' => new CustomNavWalker(),
-    'echo' => false,
+    'menu_class'     => 'nav__list',
+    'container'      => false,
+    'walker'         => new CustomNavWalker(),
+    'echo'           => false,
     ]) !!}
     </div>
 

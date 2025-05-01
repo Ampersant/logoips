@@ -10,8 +10,5 @@
     "acf": {
         "mode": "edit",
         "renderTemplate": "promo.php"
-    },
-    "supports": {
-        "anchor": true
     }
 }

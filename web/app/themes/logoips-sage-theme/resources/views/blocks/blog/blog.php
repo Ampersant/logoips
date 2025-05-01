@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Blog block template.
+ *
+ * @param array $block The block settings and attributes.
+*/
+
 $slides   = get_field('slides');
 $subtitle = get_field('subtitle');
 if ($slides):
@@ -22,7 +29,7 @@ if ($slides):
         <div class="mt-5 mb-3 d-flex gap-2 flex-wrap justify-content-center justify-content-md-start">
             <?php foreach ($filters as $i => $tag):
                 $checkbox_id = 'tag' . ($i + 1);
-                $data_tag = ($i === 0) ? 'all' : $tag;
+                $data_tag    = ($i === 0) ? 'all' : $tag;
             ?>
                 <input
                     type="checkbox"
@@ -31,10 +38,12 @@ if ($slides):
                     data-tag="<?php echo esc_attr($data_tag); ?>"
                     autocomplete="off"
                     <?php if ($i === 0) echo 'checked';
-                    ?>>
+                    ?>
+                >
                 <label
                     class="btn rounded-pill bg-checks"
-                    for="<?php echo esc_attr($checkbox_id); ?>"><?php echo esc_html($tag); ?></label>
+                    for="<?php echo esc_attr($checkbox_id); ?>"><?php echo esc_html($tag); ?>
+                </label>
             <?php endforeach; ?>
         </div>
 

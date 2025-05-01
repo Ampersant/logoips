@@ -4,9 +4,8 @@
  * Promo block template.
  *
  * @param array $block The block settings and attributes.
- */
+*/
 
-// Load values and assign defaults.
 $heading          = !empty(get_field('heading')) ? get_field('heading') : 'Sample of Heading...';
 $text             = !empty(get_field('text')) ? get_field('text') : 'Your text here...';
 $button_label     = !empty(get_field('button_label')) ? get_field('button_label') : 'Click!';

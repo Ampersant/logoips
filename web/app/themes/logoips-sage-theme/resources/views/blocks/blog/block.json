@@ -12,8 +12,5 @@
     "acf": {
         "mode": "preview",
         "renderTemplate": "blog.php"
-    },
-    "supports": {
-        "anchor": true
     }
 }

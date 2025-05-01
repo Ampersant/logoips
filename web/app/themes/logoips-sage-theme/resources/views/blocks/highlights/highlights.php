@@ -1,7 +1,13 @@
 <?php
+
+/**
+ * Highlights block template.
+ *
+ * @param array $block The block settings and attributes.
+*/
+
 if (have_rows('highlights')):
 ?>
-    <!--=============== HIGHLIGHTS SECTION ===============-->
     <div class="container">
         <div class="row g-4">
             <?php while (have_rows('highlights')): the_row();

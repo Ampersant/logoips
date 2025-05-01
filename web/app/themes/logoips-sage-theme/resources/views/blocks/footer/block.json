@@ -10,8 +10,5 @@
     "acf": {
         "mode": "preview",
         "renderTemplate": "footer.php"
-    },
-    "supports": {
-        "anchor": true
     }
 }

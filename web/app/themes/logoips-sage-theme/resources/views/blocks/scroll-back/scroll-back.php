@@ -1,4 +1,11 @@
-<?php 
+<?php
+
+/**
+ * Scroll-back block template.
+ *
+ * @param array $block The block settings and attributes.
+*/ 
+
     $icon = get_field('icon');
 ?>
 <div class="container d-flex justify-content-center align-items-center" id="scroll-back">

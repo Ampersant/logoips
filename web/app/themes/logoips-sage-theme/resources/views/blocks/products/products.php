@@ -1,15 +1,21 @@
 <?php
-// Проверяем, есть ли карточки
+
+/**
+ * Product block template.
+ *
+ * @param array $block The block settings and attributes.
+*/
+
 if (have_rows('product_cards')):
 ?>
     <div class="container mt-5">
         <h2 class="fw-light">Our Products</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php while (have_rows('product_cards')): the_row();
-                $image = get_sub_field('product_image');
-                $title = get_sub_field('product_name');
-                $desc  = get_sub_field('product_description');
-                $link  = get_sub_field('product_link');
+                $image      = get_sub_field('product_image');
+                $title      = get_sub_field('product_name');
+                $desc       = get_sub_field('product_description');
+                $link       = get_sub_field('product_link');
                 $card_color = get_sub_field('card_color');
             ?>
                 <div class="col">
