@@ -3,8 +3,9 @@
     "title": "Hero",
     "description": "A custom Hero block that uses ACF fields.",
     "style": [ "file:./hero.css" ],
+    "editorStyle": [ "file:./hero.css" ],
     "category": "formatting",
-    "icon": "admin-comments",
+    "icon": "media-interactive",
     "keywords": ["hero", "quote"],
     "acf": {
         "mode": "preview",

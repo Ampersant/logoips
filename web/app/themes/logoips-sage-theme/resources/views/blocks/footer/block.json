@@ -3,8 +3,9 @@
     "title": "Footer",
     "description": "A Footer block.",
     "style": [ "file:./footer.css" ],
+    "editorStyle": [ "file:./footer.css" ],
     "category": "formatting",
-    "icon": "admin-comments",
+    "icon": "shortcode",
     "keywords": ["footer"],
     "acf": {
         "mode": "preview",

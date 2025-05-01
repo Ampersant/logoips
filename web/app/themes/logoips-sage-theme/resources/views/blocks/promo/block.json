@@ -3,11 +3,12 @@
     "title": "Promo",
     "description": "A Promo block.",
     "style": [ "file:./promo.css" ],
+    "editorStyle": [ "file:./promo.css" ],
     "category": "formatting",
-    "icon": "admin-comments",
+    "icon": "text-page",
     "keywords": ["promo", "thumbnail"],
     "acf": {
-        "mode": "preview",
+        "mode": "edit",
         "renderTemplate": "promo.php"
     },
     "supports": {

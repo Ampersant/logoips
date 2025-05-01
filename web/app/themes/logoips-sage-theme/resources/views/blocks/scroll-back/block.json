@@ -5,7 +5,7 @@
     "style": [ "file:./scroll-back.css" ],
     "editorStyle": [ "file:./scroll-back.css" ],
     "category": "formatting",
-    "icon": "admin-comments",
+    "icon": "arrow-up-alt2",
     "keywords": ["scroll back"],
     "acf": {
         "mode": "preview",

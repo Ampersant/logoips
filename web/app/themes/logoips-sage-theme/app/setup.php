@@ -168,14 +168,14 @@ add_action('acf/init', function () {
     wp_register_script(
         'jquery-cdn',
         'https://code.jquery.com/jquery-3.7.1.min.js',
-        [],            
+        [],
         '3.7.1',
-        true          
+        true
     );
     wp_register_script(
         'swiper-cdn',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
-        ['jquery-cdn'], 
+        ['jquery-cdn'],
         '11.0.0',
         true
     );
@@ -210,12 +210,7 @@ add_action('acf/init', function () {
 });
 
 // adding bootstrap css to Gutenberg-editor
-add_action('enqueue_block_editor_assets', function () {
-    wp_enqueue_style(
-        'bootstrap-editor',
-        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
-        [],
-        '5.3.2'
-    );
-
+add_action('after_setup_theme', function () {
+    add_theme_support('editor-styles');
+    add_editor_style('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
 });
