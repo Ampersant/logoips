@@ -1,0 +1,14 @@
+{
+    "name": "acf/promo",
+    "title": "Promo",
+    "description": "A Promo block.",
+    "style": [ "file:./promo.css" ],
+    "editorStyle": [ "file:./promo.css" ],
+    "category": "formatting",
+    "icon": "text-page",
+    "keywords": ["promo", "thumbnail"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "promo.php"
+    }
+}

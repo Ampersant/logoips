@@ -1,0 +1,38 @@
+.btn-grey {
+    background-color: #4b4b4b !important;
+    color: #fff !important;
+}
+
+.btn-grey:hover {
+    background-color:  #212429 !important;
+}
+
+footer a {
+    text-decoration: none;
+    position: relative;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: #212429;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+    footer {
+        display: none;
+    }
+}

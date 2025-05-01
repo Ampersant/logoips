@@ -1,0 +1,30 @@
+.circle-container {
+    width: 40px;
+    height: 40px;
+    background-color: #ffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-container img {
+    margin: 0;
+    display: block;
+}
+
+.circle-container-scroll {
+    width: 40px;
+    height: 40px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1118px) {
+    .product-descr {
+        display: none;
+    }
+}

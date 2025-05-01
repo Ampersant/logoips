@@ -1,0 +1,16 @@
+{
+    "name": "acf/blog",
+    "title": "Blog",
+    "description": "A custom Blog block.",
+    "style": [ "file:./blog.css" ],
+    "editorStyle": [ "file:./blog.css" ],
+    "script": [ "file:./blog.js" ],
+    "editorScript": [ "file:./blog.js" ],
+    "category": "formatting", 
+    "icon": "slides",
+    "keywords": ["blog", "slider"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blog.php"
+    }
+}
