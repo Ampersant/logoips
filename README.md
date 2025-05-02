@@ -58,6 +58,8 @@ You ready to go!
 
 5. **Access the site**
 
+⚡ Before accessing the site, it's highly recommended to clear the cache of the browser, to avoid problems with localhost redirections ⚡
+
    * Frontend: [http://localhost:8080](http://localhost:8080)
    * Admin: [http://localhost:8080/wp/wp-admin](http://localhost:8080/wp/wp-admin) - credentials on request
    * Database: host `db`, user and password as configured in `.env`
