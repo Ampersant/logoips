@@ -3,7 +3,6 @@
 web/app/mu-plugins/*/
 web/app/themes/twentytwentyfive/
 web/app/upgrade
-web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
 
