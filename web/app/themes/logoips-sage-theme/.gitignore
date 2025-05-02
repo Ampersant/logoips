@@ -1,6 +1,11 @@
 /node_modules
 /vendor
-/public/*
+/public/build/manifest.json
+/public/build/assets/app-*
+/public/build/assets/editor-*
+/public/build/assets/theme.json
 !/public/.gitkeep
+!/public/build/assets/nav.css
+!/public/build/assets/nav.js
 .env
 npm-debug.log
