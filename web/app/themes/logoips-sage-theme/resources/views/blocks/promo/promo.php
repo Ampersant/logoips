@@ -4,15 +4,15 @@
  * Promo block template.
  *
  * @param array $block The block settings and attributes.
-*/
+ */
 
 $heading          = !empty(get_field('heading')) ? get_field('heading') : 'Sample of Heading...';
 $text             = !empty(get_field('text')) ? get_field('text') : 'Your text here...';
 $button_label     = !empty(get_field('button_label')) ? get_field('button_label') : 'Click!';
 $image            = get_field('promo_image');
 $background_color = get_field('promo_background_color');
+
 ?>
-            
 <div class="container my-5" id="promo">
     <div class="card border-0 shadow text-white" <?php if ($background_color) echo 'style="background-color:' . esc_attr($background_color) . ';"'; ?>>
         <div class="row g-0 h-100">
