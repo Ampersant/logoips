@@ -58,7 +58,9 @@ You ready to go!
 
 5. **Access the site**
 
-⚡ Before accessing the site, it's highly recommended to clear the cache of the browser, to avoid problems with localhost redirections ⚡
+⚡ Before accessing the site, it's highly recommended to clear the cache of the browser ⚡
+
+**The port sometimes needs to be entered manually**
 
    * Frontend: [http://localhost:8080](http://localhost:8080)
    * Admin: [http://localhost:8080/wp/wp-admin](http://localhost:8080/wp/wp-admin) - credentials on request
