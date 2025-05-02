@@ -13,7 +13,7 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body @php(body_class())>
+<body @php(body_class()) style="font-family: 'Inter', sans-serif">
   @php(wp_body_open())
 
   <div id="app">
