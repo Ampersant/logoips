@@ -214,3 +214,13 @@ add_action('after_setup_theme', function () {
     add_theme_support('editor-styles');
     add_editor_style('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
 });
+
+// adding font for front-end
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style(
+        'theme-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap',
+        [],
+        null
+    );
+});
